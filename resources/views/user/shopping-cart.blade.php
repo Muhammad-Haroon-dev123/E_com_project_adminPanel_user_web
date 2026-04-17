@@ -43,9 +43,9 @@
                                 </tr>
                             @endif
 
-                            @if (count($cart) > 0)
+                            @php $grandTotal = 0; @endphp
 
-                                @php $grandTotal = 0; @endphp
+                            @if (count($cart) > 0)
 
                                 @foreach ($cart as $id => $item)
                                     @php
@@ -53,24 +53,24 @@
                                         $grandTotal += $total;
                                     @endphp
 
-                                    <tr>
+                                    <tr data-id="{{ $id }}" data-price="{{ $item['price'] }}">
                                         <td class="product__cart__item">
                                             <div class="product__cart__item__pic">
                                                 <img src="{{ Storage::url($item['image']) }}" style="width:100px;" alt="">
                                             </div>
                                             <div class="product__cart__item__text">
                                                 <h6>{{ $item['name'] }}</h6>
-                                                <h5>${{ $item['price'] }}</h5>
+                                                <h5>${{ number_format($item['price'], 2) }}</h5>
                                             </div>
                                         </td>
                                         <td class="quantity__item">
                                             <div class="quantity">
                                                 <div class="pro-qty-2">
-                                                    <input type="number" min="1" class="cart-quantity" id="cart-quantity-{{ $id }}" data-id="{{ $id }}" value="{{ $item['quantity'] }}">
+                                                    <input type="number" min="1" class="cart-quantity" data-id="{{ $id }}" value="{{ $item['quantity'] }}">
                                                 </div>
-                                            </div>
+                                            </div>               
                                         </td>
-                                        <td class="cart__price" id="cart-item-total-{{ $id }}" data-id="{{ $id }}">${{ number_format($total, 2) }}</td>
+                                        <td class="cart__price" id="cart-item-total-{{ $id }}">${{ number_format($total, 2) }}</td>
                                         <td class="cart__close">
                                             <a href="{{ route('cart.remove', $id) }}">
                                             <i class="fa fa-close"></i>
@@ -110,8 +110,8 @@
                 <div class="cart__total">
                     <h6>Cart total</h6>
                     <ul>
-                        <li>Subtotal <span>$ 169.50</span></li>
-                        <li>Total <span>$ 169.50</span></li>
+                        <li>Subtotal <span id="cart-subtotal">${{ number_format($grandTotal, 2) }}</span></li>
+                        <li>Total <span id="cart-total">${{ number_format($grandTotal, 2) }}</span></li>
                     </ul>
                     <a href="#" class="primary-btn">Proceed to checkout</a>
                 </div>
@@ -120,5 +120,7 @@
     </div>
 </section>
 <!-- Shopping Cart Section End -->
+
+<script src="{{ asset('js/cart.js') }}"></script>
 
 @include('user.component.footer')

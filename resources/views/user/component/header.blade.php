@@ -51,8 +51,14 @@
         <div class="offcanvas__nav__option">
             <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
             <a href="#"><img src="img/icon/heart.png" alt=""></a>
-            <a href="#"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-            <div class="price">$0.00</div>
+            <a href="{{ route('shopping.cart') }}"><img src="img/icon/cart.png" alt=""> <span id="offcanvas-cart-quantity">{{ array_sum(array_column(session()->get('cart', []), 'quantity')) }}</span></a>
+            @php
+                $total = 0;
+                foreach(session()->get('cart', []) as $item) {
+                    $total += $item['price'] * $item['quantity'];
+                }
+            @endphp
+            <div class="price" id="offcanvas-cart-total">${{ number_format($total, 2) }}</div>
         </div>
         <div id="mobile-menu-wrap"></div>
         <div class="offcanvas__text">
@@ -120,8 +126,14 @@
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
                         <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="{{ route('shopping.cart') }}"><img src="img/icon/cart.png" alt=""> <span>{{ array_sum(array_column(session()->get('cart', []), 'quantity')) }}</span></a>
-                        <div class="price">${{ array_sum(array_column(session()->get('cart', []), 'price')) }}</div>
+                        <a href="{{ route('shopping.cart') }}"><img src="img/icon/cart.png" alt=""> <span id="header-cart-quantity">{{ array_sum(array_column(session()->get('cart', []), 'quantity')) }}</span></a>
+                        @php
+                            $total = 0;
+                            foreach(session()->get('cart', []) as $item) {
+                                $total += $item['price'] * $item['quantity'];
+                            }
+                        @endphp
+                        <div class="price" id="header-cart-total">${{ number_format($total, 2) }}</div>
                     </div>
                 </div>
             </div>

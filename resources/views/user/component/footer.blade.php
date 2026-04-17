@@ -116,8 +116,8 @@
                     success: function (response) {
                         if (response.success) {
                             $('#cart-item-total-' + id).text('$' + formatMoney(response.item_total));
-                            $('#cart-grand-subtotal').text('$' + formatMoney(response.grand_total));
-                            $('#cart-grand-total').text('$' + formatMoney(response.grand_total));
+                            $('#cart-subtotal').text('$' + formatMoney(response.grand_total));
+                            $('#cart-total').text('$' + formatMoney(response.grand_total));
                         }
                     },
                     error: function () {
