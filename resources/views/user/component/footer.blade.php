@@ -87,6 +87,46 @@
     <script src="{{ asset('js/mixitup.min.js') }}"></script>
     <script src="{{ asset('js/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('js/main.js') }}"></script>
+    <script>
+        $(function () {
+            var token = $('meta[name="csrf-token"]').attr('content');
+
+            function formatMoney(value) {
+                return parseFloat(value || 0).toFixed(2);
+            }
+
+            $(document).on('change input', '.cart-quantity', function () {
+                var $input = $(this);
+                var id = $input.data('id');
+                var quantity = parseInt($input.val(), 10);
+
+                if (isNaN(quantity) || quantity < 1) {
+                    quantity = 1;
+                    $input.val(quantity);
+                }
+
+                $.ajax({
+                    url: "{{ route('cart.update') }}",
+                    method: 'POST',
+                    data: {
+                        _token: token,
+                        id: id,
+                        quantity: quantity
+                    },
+                    success: function (response) {
+                        if (response.success) {
+                            $('#cart-item-total-' + id).text('$' + formatMoney(response.item_total));
+                            $('#cart-grand-subtotal').text('$' + formatMoney(response.grand_total));
+                            $('#cart-grand-total').text('$' + formatMoney(response.grand_total));
+                        }
+                    },
+                    error: function () {
+                        alert('Unable to update cart. Please try again.');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>

@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\categoryController;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\shoppingCard;
 use App\Http\Controllers\userController;
@@ -19,6 +20,7 @@ Route::get('/add-to-card/{id}', [userController::class, 'addToCard'])->name('add
 
 //-------card session routes------
 Route::post('/add-to-cart', [shoppingCard::class, 'add'])->name('cart.add');
+Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 Route::get('/shopping-cart', [shoppingCard::class, 'index'])->name('shopping.cart');
 Route::get('/remove-from-cart/{id}', [shoppingCard::class, 'remove'])->name('cart.remove');
 //-------admin routes------

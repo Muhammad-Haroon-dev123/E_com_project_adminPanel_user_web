@@ -39,7 +39,9 @@ class shoppingCard extends Controller
 public function index()
 {
     $cart = session()->get('cart', []);
+    // print_r($cart); exit;
     return view('user.shopping-cart', compact('cart'));
+
 }
 
 // Remove item

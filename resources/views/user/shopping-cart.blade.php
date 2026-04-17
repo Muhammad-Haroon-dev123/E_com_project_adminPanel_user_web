@@ -66,11 +66,11 @@
                                         <td class="quantity__item">
                                             <div class="quantity">
                                                 <div class="pro-qty-2">
-                                                    <input type="text" value="{{ $item['quantity'] }}">
+                                                    <input type="number" min="1" class="cart-quantity" id="cart-quantity-{{ $id }}" data-id="{{ $id }}" value="{{ $item['quantity'] }}">
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="cart__price">$00</td>
+                                        <td class="cart__price" id="cart-item-total-{{ $id }}" data-id="{{ $id }}">${{ number_format($total, 2) }}</td>
                                         <td class="cart__close">
                                             <a href="{{ route('cart.remove', $id) }}">
                                             <i class="fa fa-close"></i>

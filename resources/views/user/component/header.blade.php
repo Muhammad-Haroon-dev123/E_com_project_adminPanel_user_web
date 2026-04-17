@@ -6,6 +6,7 @@
     <meta name="description" content="Male_Fashion Template">
     <meta name="keywords" content="Male_Fashion, unica, creative, html">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Male-Fashion | Template</title>
 
@@ -119,8 +120,8 @@
                     <div class="header__nav__option">
                         <a href="#" class="search-switch"><img src="img/icon/search.png" alt=""></a>
                         <a href="#"><img src="img/icon/heart.png" alt=""></a>
-                        <a href="{{ route('shopping.cart') }}"><img src="img/icon/cart.png" alt=""> <span>0</span></a>
-                        <div class="price">$0.00</div>
+                        <a href="{{ route('shopping.cart') }}"><img src="img/icon/cart.png" alt=""> <span>{{ array_sum(array_column(session()->get('cart', []), 'quantity')) }}</span></a>
+                        <div class="price">${{ array_sum(array_column(session()->get('cart', []), 'price')) }}</div>
                     </div>
                 </div>
             </div>
