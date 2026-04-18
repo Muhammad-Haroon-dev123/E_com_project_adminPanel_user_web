@@ -7,6 +7,7 @@
   <title>Flexy Free Bootstrap Admin Template by WrapPixel</title>
   <link rel="shortcut icon" type="image/png" href="{{ asset('admin/assets/images/logos/favicon.png') }}" />
   <link rel="stylesheet" href="{{ asset('admin/assets/css/styles.min.css') }}" />
+  <link rel="stylesheet" href="{{ asset('admin/assets/css/custom-admin.css') }}" />
 </head>
 
 <body>
@@ -19,11 +20,8 @@
       <div class="d-flex align-items-center justify-content-center gap-5 mb-2 mb-lg-0">
         <a class="d-flex justify-content-center" href="#">
           <img src="assets/images/logos/logo-wrappixel.svg" alt="" width="150">
-        </a>
-
-        
+        </a>   
       </div>
-
       <div class="d-lg-flex align-items-center gap-2">
         <h3 class="text-white mb-2 mb-lg-0 fs-5 text-center">Check Flexy Premium Version</h3>
         <div class="d-flex align-items-center justify-content-center gap-2">
@@ -46,7 +44,7 @@
       <div>
         <div class="brand-logo d-flex align-items-center justify-content-between">
           <a href="./index.html" class="text-nowrap logo-img">
-            <img src="{{ asset('admin/assets/images/logos/logo.svg') }}" alt="" />
+            <img src="{{ asset('admin/assets/images/logos/logo.png') }}" alt="" />
           </a>
           <div class="close-btn d-xl-none d-block sidebartoggler cursor-pointer" id="sidebarCollapse">
             <i class="ti ti-x fs-6"></i>

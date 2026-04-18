@@ -1,0 +1,144 @@
+/* Custom Admin Button Styles */
+
+/* Primary Button */
+.btn-primary {
+    background-color: #e53637;
+    border-color: #e53637;
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: #d12d2e;
+    border-color: #d12d2e;
+    color: #ffffff;
+}
+
+.btn-primary:focus,
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #c42426;
+    border-color: #c42426;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(229, 54, 55, 0.5);
+}
+
+.btn-primary:disabled {
+    background-color: #e53637;
+    border-color: #e53637;
+    color: #ffffff;
+    opacity: 0.65;
+}
+
+/* Button Check Active State */
+.btn-check:checked + .btn-primary,
+.btn-check:active + .btn-primary {
+    background-color: #c42426;
+    border-color: #c42426;
+    color: #ffffff;
+}
+
+/* Outline Primary Button */
+.btn-outline-primary {
+    color: #e53637;
+    border-color: #e53637;
+}
+
+.btn-outline-primary:hover {
+    background-color: #e53637;
+    border-color: #e53637;
+    color: #ffffff;
+}
+
+.btn-outline-primary:focus,
+.btn-outline-primary:active,
+.btn-outline-primary.active {
+    background-color: #c42426;
+    border-color: #c42426;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(229, 54, 55, 0.5);
+}
+
+.btn-check:checked + .btn-outline-primary,
+.btn-check:active + .btn-outline-primary {
+    background-color: #c42426;
+    border-color: #c42426;
+    color: #ffffff;
+}
+
+/* Submit, Update, Delete, and Action Buttons */
+.btn-submit,
+.btn-update,
+.btn-delete,
+.btn-action {
+    background-color: #e53637;
+    border-color: #e53637;
+    color: #ffffff;
+}
+
+.btn-submit:hover,
+.btn-update:hover,
+.btn-delete:hover,
+.btn-action:hover {
+    background-color: #d12d2e;
+    border-color: #d12d2e;
+    color: #ffffff;
+}
+
+.btn-submit:focus,
+.btn-submit:active,
+.btn-submit.active,
+.btn-update:focus,
+.btn-update:active,
+.btn-update.active,
+.btn-delete:focus,
+.btn-delete:active,
+.btn-delete.active,
+.btn-action:focus,
+.btn-action:active,
+.btn-action.active {
+    background-color: #c42426;
+    border-color: #c42426;
+    color: #ffffff;
+    box-shadow: 0 0 0 0.25rem rgba(229, 54, 55, 0.5);
+}
+
+/* Sidebar Navigation Links */
+.sidebar-link {
+    color: #67757c;
+}
+
+.sidebar-link:hover {
+    color: #e53637;
+    background-color: rgba(229, 54, 55, 0.1);
+}
+
+.sidebar-link:focus {
+    color: #e53637;
+}
+
+.sidebar-link.active {
+    background-color: #e53637 !important;
+    color: #ffffff;
+}
+
+.sidebar-link.active:hover {
+    background-color: #d12d2e !important;
+    color: #ffffff;
+}
+
+/* Navigation Active State */
+.nav-link.active {
+    color: #e53637;
+    background-color: rgba(229, 54, 55, 0.1);
+}
+
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+    background-color: #e53637;
+    color: #ffffff;
+}
+
+.nav-pills .nav-link.active:hover,
+.nav-pills .show > .nav-link:hover {
+    background-color: #d12d2e;
+}
