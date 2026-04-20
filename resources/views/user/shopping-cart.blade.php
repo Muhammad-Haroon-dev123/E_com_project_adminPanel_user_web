@@ -89,12 +89,12 @@
                 <div class="row">
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn">
-                            <a href="#">Continue Shopping</a>
+                            <a href="{{ route('checkout') }}">Continue Shopping</a>
                         </div>
                     </div>
                     <div class="col-lg-6 col-md-6 col-sm-6">
                         <div class="continue__btn update__btn">
-                            <a href="#"><i class="fa fa-spinner"></i> Update cart</a>
+                            {{-- <a href="#"><i class="fa fa-spinner"></i> Update cart</a> --}}
                         </div>
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                         <li>Subtotal <span id="cart-subtotal">${{ number_format($grandTotal, 2) }}</span></li>
                         <li>Total <span id="cart-total">${{ number_format($grandTotal, 2) }}</span></li>
                     </ul>
-                    <a href="#" class="primary-btn">Proceed to checkout</a>
+                    <a href="{{ route('checkout') }}" class="primary-btn">Proceed to checkout</a>
                 </div>
             </div>
         </div>

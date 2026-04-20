@@ -1,4 +1,4 @@
-{{-- @include('user.header') --}}
+{{-- @include('user.component.header') --}}
 
 <!-- ***** Product Area Starts ***** -->
 {{-- <section class="section" id="product" style="margin-top: 200px">
@@ -210,7 +210,7 @@
                         </div>
                         <div class="product__details__last__option">
                             <h5><span>Guaranteed Safe Checkout</span></h5>
-                            <img src="img/shop-details/details-payment.png" alt="">
+                            <img src="{{ asset('img/shop-details/details-payment.png') }}" alt="">
                             <ul>
                                 <li><span>SKU:</span> 3812912</li>
                                 <li><span>Categories:</span> Clothes</li>
@@ -359,10 +359,10 @@
                     <div class="product__item__pic set-bg" data-setbg="img/product/product-1.jpg">
                         <span class="label">New</span>
                         <ul class="product__hover">
-                            <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
-                            <li><a href="#"><img src="img/icon/compare.png" alt="">
-                                    <span>Compare</span></a></li>
-                            <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                            <li><a href="#"><img src="{{ asset('img/icon/heart.png') }}" alt=""></a></li>
+                            <li><a href="#"><img src="{{ asset('img/icon/compare.png') }}" alt="">
+                                <span>Compare</span></a></li>
+                            <li><a href="#"><img src="{{ asset('img/icon/search.png') }}" alt=""></a></li>lt=""></a></li>lt=""></a></li>lt=""></a></li>
                         </ul>
                     </div>
                     <div class="product__item__text">

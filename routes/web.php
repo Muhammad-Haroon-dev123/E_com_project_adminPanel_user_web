@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Auth\AuthenticatedSessionController;
 use App\Http\Controllers\categoryController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\shoppingCard;
 use App\Http\Controllers\userController;
@@ -24,6 +25,11 @@ Route::post('/add-to-cart', [shoppingCard::class, 'add'])->name('cart.add');
 Route::post('/cart/update', [CartController::class, 'update'])->name('cart.update');
 Route::get('/shopping-cart', [shoppingCard::class, 'index'])->name('shopping.cart');
 Route::get('/remove-from-cart/{id}', [shoppingCard::class, 'remove'])->name('cart.remove');
+
+//--------order routes------
+Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
+
+
 //-------admin routes------
 
 Route::middleware(['auth','guest'])->group(function () {
