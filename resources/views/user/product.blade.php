@@ -86,7 +86,7 @@
         </div>
     </section>
     <!-- Breadcrumb Section End -->
-
+ 
     <!-- Shop Section Begin -->
     <section class="shop spad">
         <div class="container">
@@ -110,8 +110,7 @@
                                             <div class="shop__sidebar__categories">
                                                 <ul class="nice-scroll">
                                                     @foreach ($categories as $category)
-                                                        <li><a href="{{ route('category.allproducts', $category->slug) }}">{{ $category->name }} ({{ $category->products()->count() }})</a></li>
-                                                        
+                                                        <li><a href="{{ route('category.allproducts', $category->slug) }}">{{ $category->name }} ({{ $category->products()->count() }})</a></li>     
                                                     @endforeach
                                                    
                                                 </ul>
@@ -292,7 +291,7 @@
                                         <i class="fa fa-star-o"></i>
                                         <i class="fa fa-star-o"></i>
                                     </div>
-                                    <h5>${{ number_format($product->price, 2) }}</h5>
+                                    <h5>${{ number_format($product->product_price, 2) }}</h5>
                                     <div class="product__color__select">
                                         <label for="pc-4">
                                             <input type="radio" id="pc-4">

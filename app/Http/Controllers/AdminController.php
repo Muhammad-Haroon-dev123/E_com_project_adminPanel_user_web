@@ -13,8 +13,19 @@ class AdminController extends Controller
 
     public function index_counter()
     {
+        $categories = Category::all();
         $products = admin::all();
-        return view('user.index', compact('products'));
+        
+        // Best Sellers: Random products (you can change logic later)
+        $bestSellers = admin::inRandomOrder()->take(4)->get();
+        
+        // New Arrivals: Latest products
+        $newArrivals = admin::orderBy('created_at', 'desc')->take(4)->get();
+        
+        // Hot Sales: Another set of random products (you can add discount logic later)
+        $hotSales = admin::inRandomOrder()->take(4)->get();
+        
+        return view('user.index', compact('products', 'categories', 'bestSellers', 'newArrivals', 'hotSales'));
     }
 
     public function index()

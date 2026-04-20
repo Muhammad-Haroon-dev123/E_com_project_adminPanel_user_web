@@ -70,12 +70,12 @@
 
                             <div class="mb-3">
                                 <label class="form-label">Name</label>
-                                <input type="text" class="form-control" name="name" value="{{ $category->name ?? '' }}">
+                                <input type="text" class="form-control" name="name" required  value="{{ $category->name ?? '' }}">
                             </div>
 
                             <div class="mb-3">
                                 <label class="form-label">Slug</label>
-                                <input type="text" class="form-control" name="slug" value="{{ $category->slug ?? '' }}">
+                                <input type="text" class="form-control" name="slug" required value="{{ $category->slug ?? '' }}">
                             </div>
                             
 
@@ -83,7 +83,7 @@
                                 <img src="{{ Storage::url($category->image ?? '') }}" alt="" width="100" >
                                 <br>
                                 <label class="form-label">Image</label>
-                                <input type="file" class="form-control" name="image">
+                                <input type="file" class="form-control" name="image" required>
                             </div>
 
                             <button type="submit" class="btn btn-primary w-100">

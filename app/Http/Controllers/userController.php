@@ -11,16 +11,26 @@ class userController extends Controller
     public function index()
     {
         $categories = Category::all();
-        return view('user.index', compact('categories'));
+        
+        // Best Sellers: Random products (you can change logic later)
+        $bestSellers = Admin::inRandomOrder()->take(4)->get();
+        
+        // New Arrivals: Latest products
+        $newArrivals = Admin::orderBy('created_at', 'desc')->take(4)->get();
+        
+        // Hot Sales: Another set of random products (you can add discount logic later)
+        $hotSales = Admin::inRandomOrder()->take(4)->get();
+        
+        return view('user.index', compact('categories', 'bestSellers', 'newArrivals', 'hotSales'));
     }
 
-    
-        public function showProducts($slug)
+        public function showProducts($slug = null)
     {
+        $allproducts = Admin::all();
         $categories = Category::all();
-        $category = Category::where('slug', $slug)->firstOrFail();
-        $products = $category->products()->latest()->get();
-        return view('user.product', compact('products', 'category', 'categories'));
+        $category = $slug ? Category::where('slug', $slug)->firstOrFail() : null;
+        $products = $category ? $category->products()->latest()->get() : Admin::latest()->get();
+        return view('user.product', compact('products', 'category', 'categories', 'allproducts'));
     }
 
     public function show($id)

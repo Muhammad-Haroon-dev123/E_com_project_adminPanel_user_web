@@ -106,8 +106,8 @@
                 <div class="col-lg-6 col-md-6">
                     <nav class="header__menu mobile-menu">
                         <ul>
-                            <li><a href="{{ route('index') }}">Home</a></li>
-                            <li class="active"><a href="">Shop</a></li>
+                            <li class="active"><a href="{{ route('index') }}">Home</a></li>
+                            <li><a href="{{ route('category.allproducts') }}">Shop</a></li>
                             <li><a href="#">Pages</a>
                                 <ul class="dropdown">
                                     <li><a href="./about.html">About Us</a></li>
