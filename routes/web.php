@@ -11,12 +11,8 @@ use App\Http\Controllers\userController;
 use Illuminate\Support\Facades\Route;
 
 
-
-
 Route::get('/',[userController::class,'index'])->name('index');
-// Route::get('/product',[userController::class,'product'])->name('product');
 Route::get('/products{slug?}', [userController::class, 'showProducts'])->name('category.allproducts');
-// Route::get('/all-products', [userController::class, 'allProducts'])->name('all.products');
 Route::get('/single/product/{id}', [userController::class, 'show'])->name('single.product');
 Route::get('/add-to-card/{id}', [userController::class, 'addToCard'])->name('add.to.card');
 
@@ -27,8 +23,9 @@ Route::get('/shopping-cart', [shoppingCard::class, 'index'])->name('shopping.car
 Route::get('/remove-from-cart/{id}', [shoppingCard::class, 'remove'])->name('cart.remove');
 
 //--------order routes------
+Route::get('/user-login', [OrderController::class, 'userLogin'])->name('user.login');
+Route::get('/user-register', [OrderController::class, 'userRegister'])->name('user.register');
 Route::get('/checkout', [OrderController::class, 'index'])->name('checkout');
-
 
 //-------admin routes------
 
@@ -56,9 +53,4 @@ Route::middleware(['auth','role:admin'])->group(function () {
     Route::get('/category/{category}/product/{product}/remove',[categoryController::class, 'removeProduct'])->name('category.product.remove'); 
 });
 
-////-------customer routes------
-
-// Route::middleware(['auth','role:customer'])->group(function () {
-//         Route::get('/customer/dashboard',[AdminController::class,'index_counter'])->name('user_dashboard');
-// });
 require __DIR__.'/auth.php';

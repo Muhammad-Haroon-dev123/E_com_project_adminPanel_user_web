@@ -1,4 +1,22 @@
 @include('user.header')
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Add to Cart</h4>
+                    <div class="breadcrumb__links">
+                        <a href="{{ route('index') }}">Home</a>
+                        <a href="{{ route('category.allproducts') }}">Shop</a>
+                        <span>Add to Cart</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
 <style>
     #card-add{
         margin-top: 200px;

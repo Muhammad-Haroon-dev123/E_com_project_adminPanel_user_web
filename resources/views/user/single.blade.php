@@ -50,17 +50,31 @@
 <!-- ***** Footer Start ***** -->
 {{-- @include('user.footer') --}}
 @include('user.component.header')
+<!-- Breadcrumb Section Begin -->
+<section class="breadcrumb-option">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="breadcrumb__text">
+                    <h4>Product Details</h4>
+                    <div class="breadcrumb__links">
+                        <a href="{{ route('index') }}">Home</a>
+                        <a href="{{ route('category.allproducts') }}">Shop</a>
+                        <span>Product Details</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Breadcrumb Section End -->
 <!-- Shop Details Section Begin -->
 <section class="shop-details">
     <div class="product__details__pic">
         <div class="container">
             <div class="row">
                 <div class="col-lg-12">
-                    <div class="product__details__breadcrumb">
-                        <a href="./index.html">Home</a>
-                        <a href="./shop.html">Shop</a>
-                        <span>Product Details</span>
-                    </div>
+
                 </div>
             </div>
             <div class="row">

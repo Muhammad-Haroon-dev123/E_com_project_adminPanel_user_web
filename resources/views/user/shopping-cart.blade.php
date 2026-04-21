@@ -7,8 +7,8 @@
                 <div class="breadcrumb__text">
                     <h4>Shopping Cart</h4>
                     <div class="breadcrumb__links">
-                        <a href="./index.html">Home</a>
-                        <a href="./shop.html">Shop</a>
+                        <a href="{{ route('index') }}">Home</a>
+                        <a href="{{ route('category.allproducts') }}">Shop</a>
                         <span>Shopping Cart</span>
                     </div>
                 </div>

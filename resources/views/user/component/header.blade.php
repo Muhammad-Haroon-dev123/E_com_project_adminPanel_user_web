@@ -80,7 +80,8 @@
                     <div class="col-lg-6 col-md-5">
                         <div class="header__top__right">
                             <div class="header__top__links">
-                                <a href="#">Sign in</a>
+                                <a href="{{ route('user.login') }}">Sign in</a>
+                                
                                 <a href="#">FAQs</a>
                             </div>
                             <div class="header__top__hover">
@@ -90,6 +91,18 @@
                                     <li>EUR</li>
                                     <li>USD</li>
                                 </ul>
+                            </div>
+
+                            <div class="header__top__hover">
+                                @if (Auth::check())
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <a href="{{ route('logout') }}" onclick="event.preventDefault(); this.closest('form').submit();"
+                                    style="color: #fff;
+                                    margin-left: 12px;" 
+                                    >Logout</a>   
+                                </form>
+                                @endif                
                             </div>
                         </div>
                     </div>

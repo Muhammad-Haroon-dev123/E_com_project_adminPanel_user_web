@@ -12,16 +12,26 @@ class OrderController extends Controller
      */
     public function index()
     {
-        if(auth()->check()) {
+        if(auth()->check() && auth()->user()->role === 'customer') {
             $cartItems = session()->get('cart', []);
             $grandTotal = 0;
             foreach ($cartItems as $item) {
                 $grandTotal += $item['price'] * $item['quantity'];
             }
+            return view('user.checkout', compact('cartItems', 'grandTotal'));
         } else {
-            return redirect()->route('index')->with('error', 'Please log in to proceed to checkout.');
+            return redirect()->route('user.login')->with('error', 'Please log in as a customer to proceed to checkout.');            
         }
-        return view('user.checkout', compact('cartItems', 'grandTotal'));
+    }
+
+    public function userLogin()
+    {
+        return view('user.user-login');
+    }
+
+    public function userRegister()
+    {
+        return view('user.user-signup');
     }
 
     /**
